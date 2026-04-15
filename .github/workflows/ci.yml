@@ -1,0 +1,15 @@
+name: Trigger AppVeyor Canonical build on main branch merge
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-templates:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Start AppVeyor build
+        run: |
+          curl -H "Authorization: Bearer ${{ secrets.APPVEYOR_START_BUILD_API_TOKEN }}" -H "Content-Type: application/json" -d '{"accountName": "oll-team", "projectSlug": "openlawlibrary-law-publish-ci-private", "branch": "main", "environmentVariables": { "ENTITY_ID": "us/md/exec" }}' -X POST https://ci.appveyor.com/api/builds
