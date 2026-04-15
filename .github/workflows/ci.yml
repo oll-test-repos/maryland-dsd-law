@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  run-templates:
+  run-canonical-build:
     runs-on: ubuntu-latest
 
     steps:
