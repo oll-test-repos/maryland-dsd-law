@@ -13,7 +13,7 @@
         "maryland-dsd/law-xml": {
             "custom": {
                 "type":"xml",
-                "allow-unauthenticated-commits":true,
+                "allow-unauthenticated-commits":false,
                 "serve":"latest",
                 "serve-prefix":"_uncodified_xml"
             }
